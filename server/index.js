@@ -6,8 +6,16 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse incoming JSON requests.
 app.use(express.json());
 
-// Use the CORS middleware to handle Cross-Origin Resource Sharing.
-app.use(cors());
+const whitelist = ['https://creditcard-luhn-validation.netlify.app', 'http://localhost:3000'];
+
+// Use the CORS middleware with the above options
+app.use(cors({
+  origin: whitelist,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization'
+}));
+
+
 
 // Luhn Algorithm Validation
 function isValidCreditCard(value) {
@@ -65,7 +73,15 @@ app.post("/validate", (req, res) => {
   }
 });
 
+// CORS middleware options
+app.options('/validate', (req, res) => {
+  res.sendStatus(200); 
+});
+
+
+
 // Start the server on the provided PORT.
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
