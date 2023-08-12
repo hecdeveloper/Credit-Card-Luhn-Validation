@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Card from "./Card";
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
+  const [cardName, setCardName] = useState("Card Holder");
+  const [expiration, setExpiration] = useState("");
+  const [ccv, setCcv] = useState("");
+
   const [isValid, setIsValid] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -49,27 +54,57 @@ const CreditCardForm = () => {
   };
 
   return (
-    <div className={`cardform ${isValid ? "is-valid" : ""}`}>
-      <h1>Credit Card Validation</h1>
+    <>
+      <Card cardNumber={cardNumber} cardName={cardName} />
+      <div className="container">
+        <div className={`cardform ${isValid ? "is-valid" : ""}`}>
+          <input
+            type="text"
+            //   value={cardholderName}
+            onChange={(e) => setCardName(e.target.value)}
+            placeholder="Enter cardholder name"
+            className="card-input"
+          />
+          <input
+            type="tel"
+            
+            value={cardNumber}
+            maxLength="22"
+            minLength="12"
+            onChange={handleCardInputChange}
+            placeholder="Enter your card number"
+            className="card-input"
+          />
+          <div className="row">
+            <input
+              type="text"
+              value={expiration}
+              onChange={(e) => setExpiration(e.target.value)}
+              placeholder="MM/YY"
+              className="card-input half-width"
+            />
+            <input
+              type="tel"
+              value={ccv}
+              onChange={(e) => setCcv(e.target.value)}
+              placeholder="CCV"
+              className="card-input half-width"
+            />
+          </div>
+          {isValid !== null && (
+            <div className={isValid ? "valid" : "invalid"}>
+              <span>
+                {isValid ? "Valid Card Number!" : "Invalid Card Number."}
+              </span>
+            </div>
+          )}
 
-      <input
-        type="tel"
-        value={cardNumber}
-        maxLength="22"
-        minLength="12"
-        onChange={handleCardInputChange}
-        placeholder="Enter your card number"
-        className="card-input"
-      />
-
-      <button onClick={validateCard} className="validate-button">
-        {loading ? "Validating..." : "Validate"}
-      </button>
-
-      {isValid !== null && (
-        <p>{isValid ? "Valid Card Number!" : "Invalid Card Number."}</p>
-      )}
-    </div>
+          <button onClick={validateCard} className="validate-button">
+            {loading ? "Validating..." : "Validate"}
+          </button>
+        </div>
+      </div>
+    </>
   );
 };
 
