@@ -79,8 +79,10 @@ const CreditCardForm = () => {
       <Card cardNumber={cardNumber} cardName={cardName} />
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
+          <div className="card-line"></div>
           <input
             type="tel"
+            id="cardNumber"
             value={cardNumber}
             maxLength="22"
             minLength="12"
