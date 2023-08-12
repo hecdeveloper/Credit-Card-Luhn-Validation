@@ -6,6 +6,26 @@ const CreditCardForm = () => {
   const [isValid, setIsValid] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const formatCardNumber = (value) => {
+    // Removing all non-digits
+    const cleaned = value.replace(/\D+/g, "");
+
+    // Adding spaces every 4 characters
+    const formatted = cleaned.match(/.{1,4}/g)?.join(" ") || "";
+
+    return formatted;
+  };
+
+  const handleCardInputChange = (e) => {
+    e.target.value = formatCardNumber(e.target.value);
+    setCardNumber(e.target.value);
+
+    // Clear the validation message if the input is empty
+    if (!e.target.value || e.target.value.trim() === "") {
+      setIsValid(null);
+    }
+  };
+
   const validateCard = async () => {
     if (!cardNumber || cardNumber.trim() === "") {
       return;
@@ -18,7 +38,7 @@ const CreditCardForm = () => {
     try {
       const response = await axios.post(
         "https://card-validation-8778dda2604a.herokuapp.com/validate",
-        { cardNumber }
+        { cardNumber: cardNumber.replace(/\s+/g, "") } // removing spaces before sending to server
       );
       setIsValid(response.data.isValid);
     } catch (error) {
@@ -33,18 +53,11 @@ const CreditCardForm = () => {
       <h1>Credit Card Validation</h1>
 
       <input
-        type="text"
+        type="tel"
         value={cardNumber}
-        onChange={(e) => {
-          setCardNumber(e.target.value);
-          if (!e.target.value || e.target.value.trim() === "") {
-            setIsValid(null);
-          }
-          const regex = /^[0-9]*$/;
-          if (regex.test(e.target.value)) {
-              setCardNumber(e.target.value);
-          }
-        }}
+        maxLength="22"
+        minLength="12"
+        onChange={handleCardInputChange}
         placeholder="Enter your card number"
         className="card-input"
       />
