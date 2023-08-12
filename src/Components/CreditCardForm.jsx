@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
-  const [cardName, setCardName] = useState("Card Holder");
+  const [cardName, setCardName] = useState("");
   const [expiration, setExpiration] = useState("");
   const [ccv, setCcv] = useState("");
 
@@ -77,9 +77,17 @@ const CreditCardForm = () => {
   return (
     <>
       <Card cardNumber={cardNumber} cardName={cardName} />
+      <div className="layout">
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <div className="card-line"></div>
+          <input
+            type="text"
+            value={cardName}
+            onChange={(e) => setCardName(e.target.value)}
+            placeholder="Enter cardholder name"
+            className="card-input"
+          />
           <input
             type="tel"
             id="cardNumber"
@@ -109,13 +117,7 @@ const CreditCardForm = () => {
             />
           </div>
     
-          <input
-            type="text"
-            value={cardName}
-            onChange={(e) => setCardName(e.target.value)}
-            placeholder="Enter cardholder name"
-            className="card-input"
-          />
+   
         </div>
         <button onClick={validateCard} className="validate-button">
           {loading ? "Validating..." : "Validate"}
@@ -127,6 +129,7 @@ const CreditCardForm = () => {
               </span>
             </div>
           )}
+      </div>
       </div>
     </>
   );
