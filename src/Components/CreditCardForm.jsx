@@ -55,7 +55,7 @@ const CreditCardForm = () => {
 
   return (
     <>
-      <Card cardNumber={cardNumber} cardName={cardName} />
+      {/* <Card cardNumber={cardNumber} cardName={cardName} /> */}
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <input
@@ -99,10 +99,10 @@ const CreditCardForm = () => {
             </div>
           )}
 
+        </div>
           <button onClick={validateCard} className="validate-button">
             {loading ? "Validating..." : "Validate"}
           </button>
-        </div>
       </div>
     </>
   );
