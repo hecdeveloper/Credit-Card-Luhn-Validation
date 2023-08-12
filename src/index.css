@@ -56,18 +56,23 @@ body, html {
 }
 
 .validate-button {
-  padding: 12px 24px;
+  height: 42px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007BFF;
+  background-color: #0056ff;
   color: #ffffff;
   border: none;
   border-radius: 6px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+
 .validate-button:hover {
-  background-color: #0056b3;
+  background-color: #1D4ED7;
   transform: translateY(-1px);
 }
 
