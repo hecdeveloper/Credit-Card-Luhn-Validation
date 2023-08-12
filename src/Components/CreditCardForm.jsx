@@ -20,6 +20,27 @@ const CreditCardForm = () => {
 
     return formatted;
   };
+  const handleExpirationChange = (e) => {
+    const value = e.target.value;
+    const cleaned = value.replace(/\D+/g, ""); // Removing all non-digits
+
+    // Setting MM/YY format
+    let formatted = cleaned;
+    if (cleaned.length >= 3) {
+      formatted = `${cleaned.slice(0, 2)}/${cleaned.slice(2, 4)}`;
+    }
+
+    setExpiration(formatted);
+  };
+  const handleCcvChange = (e) => {
+    const value = e.target.value;
+    const cleaned = value.replace(/\D+/g, ""); // Removing all non-digits
+
+    // Ensuring only the first 3 characters are considered
+    const formatted = cleaned.slice(0, 3);
+
+    setCcv(formatted);
+  };
 
   const handleCardInputChange = (e) => {
     e.target.value = formatCardNumber(e.target.value);
@@ -59,15 +80,7 @@ const CreditCardForm = () => {
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <input
-            type="text"
-              value={cardName}
-            onChange={(e) => setCardName(e.target.value)}
-            placeholder="Enter cardholder name"
-            className="card-input"
-          />
-          <input
             type="tel"
-            
             value={cardNumber}
             maxLength="22"
             minLength="12"
@@ -77,32 +90,41 @@ const CreditCardForm = () => {
           />
           <div className="row">
             <input
-              type="text"
+              type="tel"
               value={expiration}
-              onChange={(e) => setExpiration(e.target.value)}
+              maxLength="7"
+              onChange={handleExpirationChange}
               placeholder="MM/YY"
               className="card-input half-width"
             />
             <input
               type="tel"
               value={ccv}
-              onChange={(e) => setCcv(e.target.value)}
+              maxLength="3" // Max 3 characters for CVV
+              onChange={handleCcvChange}
               placeholder="CCV"
               className="card-input half-width"
             />
           </div>
-          {isValid !== null && (
+    
+          <input
+            type="text"
+            value={cardName}
+            onChange={(e) => setCardName(e.target.value)}
+            placeholder="Enter cardholder name"
+            className="card-input"
+          />
+        </div>
+        <button onClick={validateCard} className="validate-button">
+          {loading ? "Validating..." : "Validate"}
+        </button>
+        {isValid !== null && (
             <div className={isValid ? "valid" : "invalid"}>
               <span>
                 {isValid ? "Valid Card Number!" : "Invalid Card Number."}
               </span>
             </div>
           )}
-
-        </div>
-          <button onClick={validateCard} className="validate-button">
-            {loading ? "Validating..." : "Validate"}
-          </button>
       </div>
     </>
   );
