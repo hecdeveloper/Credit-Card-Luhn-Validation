@@ -21,7 +21,7 @@ html {
   margin: 20px 0;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   background: linear-gradient(180deg, #ffffff, #f9f9f9);
   border-radius: 24px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
@@ -41,8 +41,8 @@ html {
 }
 
 .card-input {
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 15px;
   width: 100%;
   max-width: 380px;
   border-radius: 6px;
@@ -58,23 +58,19 @@ html {
 }
 
 .validate-button {
-  height: 42px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px;
+  padding: 12px 24px;
   font-size: 16px;
   cursor: pointer;
   background-color: #007bff;
   color: #ffffff;
   border: none;
   border-radius: 6px;
+  margin-top: 2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
 .validate-button:hover {
-  background-color: #1D4ED7;
+  background-color: #0056b3;
   transform: translateY(-1px);
 }
 
@@ -92,11 +88,11 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
   /* background: linear-gradient(180deg, #ffffff, #f9f9f9); */
   /* border-radius: 24px; */
   /* box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08); */
-  border: 1px solid #e0e0e0;
+  /* border: 1px solid #e0e0e0; */
 }
 
 .valid {
@@ -119,4 +115,25 @@ html {
 .card-input.half-width {
   width: calc(50% - 5px); 
   margin-right: 10px;
+}
+
+
+@media (max-width: 767px) {
+  /* mobile-specific styles here */
+
+  /* Increase the width of the half-width inputs slightly for better utilization of space */
+  .card-input.half-width {
+      width: calc(50% - 3px);
+  }
+
+  /* Adjust button size for better tapping on mobile */
+  .validate-button {
+      padding: 10px 20px;
+      margin: 2rem;
+  }
+
+  /* As screen size is limited on mobile, consider reducing margin/padding around main containers for better space utilization */
+  .container {
+      padding: 2rem 1rem;
+  }
 }
