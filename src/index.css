@@ -22,22 +22,20 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 1rem;
-  background: linear-gradient(180deg, #ffffff, #f9f9f9);
-  border-radius: 24px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e0e0e0;
+  /* background: linear-gradient(160deg, #007bff, #0056b3); */
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  border: none;
   max-width: 400px;
   margin: 0 auto;
   transition: all 0.3s ease-in-out;
+  color: #ffffff;
 }
+
 
 .cardform:hover {
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
-  transform: translateY(-3px);
-}
-
-.cardform.is-valid {
-  background: linear-gradient(180deg, #e6ffe6, #d4ffd4);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-5px); /* More prominent lift on hover */
 }
 
 .card-input {
@@ -45,11 +43,12 @@ html {
   font-size: 15px;
   width: 100%;
   max-width: 380px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #d8d8d8;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.8); 
+  color: #000; 
 }
-
 
 .card-input:focus {
   border-color: #007bff;
@@ -61,13 +60,20 @@ html {
   padding: 12px 24px;
   font-size: 16px;
   cursor: pointer;
+  margin-bottom: 2rem;
   background-color: #007bff;
-  color: #ffffff;
+  color: #ffffff; /* Changed to match the gradient */
   border: none;
-  border-radius: 6px;
+  border-radius: 8px; /* Rounded corners for the button */
   margin-top: 2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.validate-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
 
 .validate-button:hover {
   background-color: #0056b3;
@@ -80,7 +86,8 @@ html {
   line-height: 32px;
   letter-spacing: 0em;
   text-align: center;
-  margin: 2rem;
+  color: #4d5565;
+  margin-bottom: 1rem;
 }
 
 .container {
@@ -96,15 +103,21 @@ html {
 }
 
 .valid {
-  color: green;
+  color: #6366f2;
   padding: 5px 10px;
+  width: 10rem;
+  text-align: center;
+  /* background-color: #6366f2; */
   border-radius: 5px;
 }
 
 .invalid {
-  color: red;
-  width: 100%;
-  border-radius: 5px;
+  color: #fea4b0;
+  padding: 5px 10px;
+  text-align: center;
+  text-align: center;
+  /* background-color: #fea4b0; */
+  border-radius: 10px;
 }
 
 .row {
@@ -120,20 +133,26 @@ html {
 
 @media (max-width: 767px) {
   /* mobile-specific styles here */
+  .cardform {
+      max-width: 100%;
+      background: linear-gradient(160deg, #007bff, #0056b3);
+      align-items: flex-start;
+  }
+  .cardform.is-valid {
+    background: linear-gradient(180deg, #e6ffe6, #d4ffd4);
+  }
+  
 
-  /* Increase the width of the half-width inputs slightly for better utilization of space */
   .card-input.half-width {
       width: calc(50% - 3px);
   }
 
-  /* Adjust button size for better tapping on mobile */
   .validate-button {
       padding: 10px 20px;
       margin: 2rem;
   }
-
-  /* As screen size is limited on mobile, consider reducing margin/padding around main containers for better space utilization */
   .container {
-      padding: 2rem 1rem;
+      padding: 10px;
+    
   }
 }

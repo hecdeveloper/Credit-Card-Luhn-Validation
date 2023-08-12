@@ -5,7 +5,7 @@ function App() {
   return(
     <div>
          <div className="headline">
-        <strong>Credit Card Information</strong>
+        <strong>Credit Card Details</strong>
       </div>
       <CreditCardForm />
       </div>
