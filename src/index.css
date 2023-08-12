@@ -34,7 +34,7 @@ html {
 
 
 .cardform:hover {
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+
   transform: translateY(-5px); /* More prominent lift on hover */
 }
 
@@ -129,22 +129,34 @@ html {
   width: calc(50% - 5px); 
   margin-right: 10px;
 }
-
+.card-line{
+  display: none;
+}
 
 @media (max-width: 767px) {
   /* mobile-specific styles here */
   .cardform {
       max-width: 100%;
-      background: linear-gradient(160deg, #007bff, #0056b3);
+      /* background: linear-gradient(160deg, #007bff, #0056b3); */
       align-items: flex-start;
   }
   .cardform.is-valid {
-    background: linear-gradient(180deg, #e6ffe6, #d4ffd4);
+    background: linear-gradient(160deg, #d0dce9, #c6ceee, #acadf1);
+  }
+  .card-input{
+    max-width: 300px;
   }
   
+  .card-input#cardNumber {
+    max-width: 250px;
+  }
 
+  .row{
+    justify-items: flex-end;
+  }
+   
   .card-input.half-width {
-      width: calc(50% - 3px);
+      width: calc(25% - 3px);
   }
 
   .validate-button {
@@ -153,6 +165,13 @@ html {
   }
   .container {
       padding: 10px;
-    
   }
+   .card-line{
+      display: flex;
+      height: 20px;
+      background-color: #7c8393;
+      width: 100%;
+      margin: 10px 0 20px;
+      border-radius: 12px;
+   }
 }
