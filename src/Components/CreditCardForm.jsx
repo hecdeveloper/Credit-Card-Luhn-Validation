@@ -40,6 +40,10 @@ const CreditCardForm = () => {
           if (!e.target.value || e.target.value.trim() === "") {
             setIsValid(null);
           }
+          const regex = /^[0-9]*$/;
+          if (regex.test(e.target.value)) {
+              setCardNumber(e.target.value);
+          }
         }}
         placeholder="Enter your card number"
         className="card-input"
