@@ -55,12 +55,12 @@ const CreditCardForm = () => {
 
   return (
     <>
-      {/* <Card cardNumber={cardNumber} cardName={cardName} /> */}
+      <Card cardNumber={cardNumber} cardName={cardName} />
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <input
             type="text"
-            //   value={cardholderName}
+              value={cardName}
             onChange={(e) => setCardName(e.target.value)}
             placeholder="Enter cardholder name"
             className="card-input"

@@ -1,4 +1,5 @@
 .credit-card {
+    display: none;
     max-width: 400px; /* Limit width for larger devices */
     height: auto;
     background-color: #3498db;
@@ -7,7 +8,6 @@
     margin: 20px auto;
     color: white;
     font-family: Arial, sans-serif;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -56,6 +56,7 @@ button:hover {
 @media screen and (min-width: 768px) {
     .credit-card {
         padding: 20px;
+        display: flex;
     }
 
     .card-number {
