@@ -168,7 +168,7 @@ html {
   }
    .card-line{
       display: flex;
-      height: 20px;
+      height: 10px;
       background-color: #7c8393;
       width: 100%;
       margin: 10px 0 20px;

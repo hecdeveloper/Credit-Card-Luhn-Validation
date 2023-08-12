@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
-  const [cardName, setCardName] = useState("Card Holder");
+  const [cardName, setCardName] = useState("");
   const [expiration, setExpiration] = useState("");
   const [ccv, setCcv] = useState("");
 
