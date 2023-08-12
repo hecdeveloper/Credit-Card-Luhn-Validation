@@ -1,0 +1,68 @@
+.credit-card {
+    max-width: 400px; /* Limit width for larger devices */
+    height: auto;
+    background-color: #3498db;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px auto;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-number {
+    font-size: 18px;
+}
+
+.card-name {
+    font-size: 16px;
+}
+
+form {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* For larger screens */
+@media screen and (min-width: 768px) {
+    .credit-card {
+        padding: 20px;
+    }
+
+    .card-number {
+        font-size: 20px;
+    }
+
+    .card-name {
+        font-size: 18px;
+    }
+}
