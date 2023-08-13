@@ -9,11 +9,15 @@
     color: white;
     font-family: Arial, sans-serif;
     flex-direction: column;
+    height: 11rem;
+    margin: 0 3rem;
     justify-content: space-between;
 }
 
 .card-number {
-    font-size: 18px;
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
 }
 
 .card-name {
@@ -37,25 +41,10 @@ input {
     font-size: 16px;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
 
 /* For larger screens */
 @media screen and (min-width: 768px) {
     .credit-card {
-        padding: 20px;
         display: flex;
     }
 
