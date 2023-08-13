@@ -1,19 +1,17 @@
 .credit-card {
-    display: none;
+    display: flex;  /* Changed to flex */
     max-width: 400px; /* Limit width for larger devices */
-    height: auto;
-    background-color: #3498db;
+    height: 250px;  /* Adjusted to be more like a credit card */
+    background: linear-gradient(to right, #2C3E50, #4C6A8A); /* Gradient background */
     border-radius: 15px;
     padding: 15px;
     margin: 20px auto;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     flex-direction: column;
-    height: 11rem;
-    margin: 0 3rem;
     justify-content: space-between;
+    position: relative; /* Added for positioning of elements */
 }
-
 .card-number {
     font-size: 28px;
     text-align: center;
@@ -39,6 +37,13 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+.card-chip{
+    height: 40px;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 

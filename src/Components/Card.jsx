@@ -1,11 +1,12 @@
 import React from "react";
-import "./mobile.css";
+import "./card.css";
+import cardChip from './Images/chip.png';
 
 const Card = ({ cardNumber, cardName }) => {
   return (
     <div className="credit-card">
     
-      <img className="card-logo" src="path_to_logo.png" alt="Card Logo" />
+    <img className="card-chip" src={cardChip} alt="Card Logo" />
       <div className="card-number">{cardNumber || "•••• •••• •••• •••"}</div>
       {/* Example of additional details */}
       <div className="card-expiry">MM/YY</div>
