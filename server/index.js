@@ -15,6 +15,17 @@ app.use(cors({
   allowedHeaders: 'Content-Type, Authorization'
 }));
 
+function getCardType(cardNumber) {
+  // Visa
+  if (/^4[0-9]{12}(?:[0-9]{3})?$/.test(cardNumber)) {
+    return 'Visa';
+  }
+  // Mastercard
+  else if (/^(5[1-5][0-9]{14}|2[2-7][0-9]{14})$/.test(cardNumber)) {
+    return 'Mastercard';
+  }
+  return 'Unknown';
+}
 
 
 // Luhn Algorithm Validation
@@ -63,13 +74,13 @@ app.post("/validate", (req, res) => {
   if (typeof cardNumber !== "string" || cardNumber.trim() === "") {
     return res.status(400).json({ error: "Invalid input" });
   }
-
+  const cardType = getCardType(cardNumber);
   // Use the Luhn Algorithm function to validate the credit card.
   // Respond with the result of the validation.
   if (isValidCreditCard(cardNumber)) {
-    res.json({ isValid: true });
+    res.json({ isValid: true, cardType: cardType });
   } else {
-    res.json({ isValid: false });
+    res.json({ isValid: false, cardType: cardType });
   }
 });
 

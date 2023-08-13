@@ -135,6 +135,9 @@ input {
   display: none;
 }
 
+
+
+
 @media (max-width: 767px) {
   /* mobile-specific styles here */
   .cardform {
@@ -164,6 +167,7 @@ input {
     padding: 10px 20px;
     margin: 2rem;
     width: 90%;
+    max-width: 375px;
   }
   .container {
     padding: 10px;
@@ -177,4 +181,5 @@ input {
     position: relative;
     bottom: 40px;
   }
+  
 }
