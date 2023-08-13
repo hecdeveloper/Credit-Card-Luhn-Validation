@@ -1,17 +1,20 @@
-body,
-html {
+* {
   margin: 0;
-  height: 100vh;
-  overflow: hidden;
-  overflow-y: auto;
-  display: flex;
-  align-items: center;
+  padding: 0;
+}
+
+html {
+  margin: 0 !important;
+  overflow: auto !important;
+}
+
+body {
+  color: #5E5C7F;
+  background-color: #F9F9FF;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
   overflow-x: hidden;
-  justify-content: center;
-  background: #f5f5f5;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,7 +26,7 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 1rem;
-  /* background: linear-gradient(160deg, #007bff, #0056b3); */
+  background-color: white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   border: none;
@@ -32,7 +35,6 @@ html {
   transition: all 0.3s ease-in-out;
   color: #ffffff;
 }
-
 
 .cardform:hover {
   transform: translateY(-5px); /*lift on hover */
@@ -55,8 +57,8 @@ input {
   border-radius: 8px;
   border: 1px solid #d8d8d8;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background: rgba(255, 255, 255, 0.8); 
-  color: #000; 
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
 }
 
 .card-input:focus {
@@ -70,11 +72,13 @@ input {
   font-size: 16px;
   cursor: pointer;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   background-color: #007bff;
-  color: #ffffff; /* Changed to match the gradient */
+  color: #ffffff;
   border: none;
-  border-radius: 8px; /* Rounded corners for the button */
+  max-width: 340px;
+  width: auto;
+  border-radius: 8px;
   margin-top: 2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -91,18 +95,15 @@ input {
   text-align: center;
   color: #4d5565;
   margin-bottom: 1rem;
+  margin-top: 3rem;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1.7rem 1rem
-  /* background: linear-gradient(180deg, #ffffff, #f9f9f9); */
-  /* border-radius: 24px; */
-  /* box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08); */
-  /* border: 1px solid #e0e0e0; */
+  justify-content: space-between;
+  padding: 1.7rem 1rem;
 }
 
 .valid {
@@ -129,50 +130,53 @@ input {
 }
 
 .card-input.half-width {
-  width: calc(50% - 5px); 
+  width: calc(50% - 5px);
   margin-right: 10px;
 }
-.card-line{
+.card-line {
   display: none;
 }
 
 @media (max-width: 767px) {
   /* mobile-specific styles here */
   .cardform {
-      max-width: 100%;
-      /* background: linear-gradient(to right, #2C3E50, #4C6A8A);  */
-      align-items: flex-start;
+    max-width: 100%;
+    align-items: flex-start;
   }
   .cardform.is-valid {
-    background: linear-gradient(to right, #2C3E50, #4C6A8A); 
+    background: linear-gradient(to right, #6C6CE5, #5B5BCC); 
   }
-  .card-input{
+  .card-input {
     max-width: 300px;
   }
-  
 
-  .row{
+  .headline {
+    margin-top: 4rem;
+  }
+
+  .row {
     justify-items: flex-end;
   }
-   
+
   .card-input.half-width {
-      width: calc(25% - 3px);
+    width: calc(25% - 3px);
   }
 
   .validate-button {
-      padding: 10px 20px;
-      margin: 2rem;
+    padding: 10px 20px;
+    margin: 2rem;
+    width: 100%;
   }
   .container {
-      padding: 10px;
+    padding: 10px;
   }
-   .card-line{
-      display: flex;
-      height: 5px;
-      width: 100%;
-      margin: 20px 0 30px;
-      border-radius: 12px;
-      position: relative;
-      bottom: 40px;
-   }
+  .card-line {
+    display: flex;
+    height: 5px;
+    width: 100%;
+    margin: 20px 0 30px;
+    border-radius: 12px;
+    position: relative;
+    bottom: 40px;
+  }
 }
