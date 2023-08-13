@@ -1,11 +1,11 @@
 .credit-card {
     display: none; 
-    max-width: 400px; 
-    height: 230px; 
-    background: linear-gradient(to right, #2C3E50, #4C6A8A); 
+    max-width: 320px;
+    height: 196px;
+    background: linear-gradient(to right, #6C6CE5, #5B5BCC); 
     border-radius: 15px;
     padding: 15px;
-    margin: 20px auto;
+    margin: 0 auto;
     color: white;
     font-family: 'Arial', sans-serif;
     flex-direction: column;
@@ -18,13 +18,7 @@
 }
 
 .card-number {
-    font-size: 28px;
-    text-align: center;
-    width: 100%;
-}
-
-.card-number {
-    font-size: 28px;
+    font-size: 20px;
     text-align: center;
     width: 100%;
     letter-spacing: 4px; 
@@ -32,8 +26,8 @@
 
 
 .card-chip{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     margin-left: 20px;
     margin-top: 10px;
 }

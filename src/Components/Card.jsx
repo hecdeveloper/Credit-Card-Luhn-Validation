@@ -5,7 +5,6 @@ import cardChip from './Images/chip.png';
 const Card = ({ cardNumber, cardName, expiration,ccv }) => {
   return (
     <div className="credit-card">
-    
     <img className="card-chip" src={cardChip} alt="Card Logo" />
       <div className="card-number">{cardNumber || "•••• •••• •••• •••"}</div>
       <div className="card-row">
