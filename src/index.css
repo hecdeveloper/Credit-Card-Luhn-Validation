@@ -71,13 +71,11 @@ input {
   padding: 12px 24px;
   font-size: 16px;
   cursor: pointer;
-  width: 100%;
   margin-bottom: 1rem;
   background-color: #007bff;
   color: #ffffff;
   border: none;
-  max-width: 340px;
-  width: auto;
+  width: 400px;
   border-radius: 8px;
   margin-top: 2rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -165,7 +163,7 @@ input {
   .validate-button {
     padding: 10px 20px;
     margin: 2rem;
-    width: 100%;
+    width: 90%;
   }
   .container {
     padding: 10px;

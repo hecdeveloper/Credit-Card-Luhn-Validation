@@ -1,7 +1,7 @@
 .credit-card {
     display: none; 
-    max-width: 320px;
-    height: 196px;
+    max-width: 400px;
+    height: 200px;
     background: linear-gradient(to right, #6C6CE5, #5B5BCC); 
     border-radius: 15px;
     padding: 15px;
@@ -28,8 +28,7 @@
 .card-chip{
     height: 40px;
     width: 40px;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .card-row{
@@ -43,6 +42,9 @@
 @media screen and (min-width: 768px) {
     .credit-card {
         display: flex;
+    }
+    .card-chip{
+        margin: 0;
     }
 
 }
