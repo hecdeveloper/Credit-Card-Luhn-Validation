@@ -35,8 +35,16 @@ html {
 
 
 .cardform:hover {
+  transform: translateY(-5px); /*lift on hover */
+}
 
-  transform: translateY(-5px); /* More prominent lift on hover */
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .card-input {
@@ -132,11 +140,11 @@ html {
   /* mobile-specific styles here */
   .cardform {
       max-width: 100%;
-      /* background: linear-gradient(160deg, #007bff, #0056b3); */
+      /* background: linear-gradient(to right, #2C3E50, #4C6A8A);  */
       align-items: flex-start;
   }
   .cardform.is-valid {
-    background: linear-gradient(160deg, #d0dce9, #c6ceee, #acadf1);
+    background: linear-gradient(to right, #2C3E50, #4C6A8A); 
   }
   .card-input{
     max-width: 300px;
