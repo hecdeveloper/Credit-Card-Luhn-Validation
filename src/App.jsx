@@ -7,9 +7,7 @@ function App() {
       <div className="headline">
         <strong>Credit Card Details</strong>
       </div>
-      <div className="fix">
       <CreditCardForm />
-      </div>
     </>
   );
 }

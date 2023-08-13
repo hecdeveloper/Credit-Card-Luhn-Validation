@@ -79,7 +79,7 @@ const CreditCardForm = () => {
   return (
     <>
       <Card cardNumber={cardNumber} cardName={cardName} expiration={expiration}  ccv={ccv}/>
-      <div className="layout">
+
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <div className="card-line">
@@ -133,7 +133,6 @@ const CreditCardForm = () => {
               </span>
             </div>
           )}
-      </div>
       </div>
     </>
   );
