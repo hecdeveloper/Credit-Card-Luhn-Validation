@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Card from "./Card";
-import cardChip from './Images/chip.png';
-
+import cardChip from "./Images/chip.png";
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -12,6 +11,8 @@ const CreditCardForm = () => {
 
   const [isValid, setIsValid] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const [cardType, setCardType] = useState("");
 
   const formatCardNumber = (value) => {
     // Removing all non-digits
@@ -69,6 +70,7 @@ const CreditCardForm = () => {
         { cardNumber: cardNumber.replace(/\s+/g, "") } // removing spaces before sending to server
       );
       setIsValid(response.data.isValid);
+      setCardType(response.data.cardType);
     } catch (error) {
       console.error("Error validating card:", error);
     } finally {
@@ -78,12 +80,22 @@ const CreditCardForm = () => {
 
   return (
     <>
-      <Card cardNumber={cardNumber} cardName={cardName} expiration={expiration}  ccv={ccv}/>
+      <Card
+        cardNumber={cardNumber}
+        cardName={cardName}
+        expiration={expiration}
+        ccv={ccv}
+      />
+      {cardType !== "Unknown" && (
+        <div className="card-type">
+          <span>Card Type: {cardType}</span>
+        </div>
+      )}
 
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <div className="card-line">
-          <img className="card-chip" src={cardChip} alt="Card Logo" />
+            <img className="card-chip" src={cardChip} alt="Card Logo" />
           </div>
           <input
             type="text"
@@ -120,19 +132,17 @@ const CreditCardForm = () => {
               className="card-input half-width"
             />
           </div>
-    
-   
         </div>
         <button onClick={validateCard} className="validate-button">
           {loading ? "Validating..." : "Validate"}
         </button>
         {isValid !== null && (
-            <div className={isValid ? "valid" : "invalid"}>
-              <span>
-                {isValid ? "Valid Card Number!" : "Invalid Card Number."}
-              </span>
-            </div>
-          )}
+          <div className={isValid ? "valid" : "invalid"}>
+            <span>
+              {isValid ? "Valid Card Number!" : "Invalid Card Number."}
+            </span>
+          </div>
+        )}
       </div>
     </>
   );
