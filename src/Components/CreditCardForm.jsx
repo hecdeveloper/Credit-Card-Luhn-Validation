@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Card from "./Card";
+import cardChip from './Images/chip.png';
+
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -80,7 +82,9 @@ const CreditCardForm = () => {
       <div className="layout">
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
-          <div className="card-line"></div>
+          <div className="card-line">
+          <img className="card-chip" src={cardChip} alt="Card Logo" />
+          </div>
           <input
             type="text"
             value={cardName}
