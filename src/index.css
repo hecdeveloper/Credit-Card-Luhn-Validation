@@ -169,9 +169,10 @@ input {
    .card-line{
       display: flex;
       height: 5px;
-      background-color: #7c8393;
       width: 100%;
-      margin: 10px 0 20px;
+      margin: 20px 0 30px;
       border-radius: 12px;
+      position: relative;
+      bottom: 40px;
    }
 }

@@ -31,13 +31,17 @@
 }
 
 
-
-
 .card-chip{
     height: 50px;
     width: 50px;
     margin-left: 20px;
     margin-top: 10px;
+}
+
+.card-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 
