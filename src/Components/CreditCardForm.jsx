@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 import cardChip from "./Images/chip.png";
+import mLogo from './Images/mastercard.png';
+import vLogo from './Images/visa.png';
+
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -85,6 +88,8 @@ const CreditCardForm = () => {
         cardName={cardName}
         expiration={expiration}
         ccv={ccv}
+        cardType={cardType}
+        isEmpty={!cardNumber || cardNumber.trim() === ""}
       />
       {cardType !== "Unknown" && (
         <div className="card-type">
@@ -96,6 +101,9 @@ const CreditCardForm = () => {
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <div className="card-line">
             <img className="card-chip" src={cardChip} alt="Card Logo" />
+            {cardType === "Mastercard" && <img className="card-logo" src={mLogo} alt="Mastercard Logo" />}
+        {cardType === "Visa" && <img className="card-logo" src={vLogo} alt="Visa Logo" />}
+        {cardType !== "Mastercard" && cardType !== "Visa" && <div style={{color: "#5E5C7F"}} >Card Type</div>}
           </div>
           <input
             type="text"

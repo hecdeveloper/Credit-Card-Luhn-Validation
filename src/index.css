@@ -180,6 +180,8 @@ input {
     border-radius: 12px;
     position: relative;
     bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
 }
