@@ -1,5 +1,6 @@
 # Credit Card Luhn Validation  
-  
+  On this project you can validate a credit card number using the Luhn algorithm.
+  The card logo will change depending on the card type.
 ## Getting Started  
   
 To run this project locally, follow these steps:  
@@ -21,5 +22,5 @@ Once started, the React app will be available at [http://localhost:3000](http://
 This will initiate the Node server on port 5000. The React app will communicate with this server for card validation.  
   
 ## Deployed Version  
-  
+  This project is deployed on Netlify.
 A live version of the app is hosted and can be accessed here: [https://luhn-validation.netlify.app/](https://luhn-validation.netlify.app/)
