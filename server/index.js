@@ -24,6 +24,10 @@ function getCardType(cardNumber) {
   else if (/^(5[1-5][0-9]{14}|2[2-7][0-9]{14})$/.test(cardNumber)) {
     return 'Mastercard';
   }
+  // American Express
+  else if (/^3[47][0-9]{13}$/.test(cardNumber)) {
+    return 'American Express';
+  }
   return 'Unknown';
 }
 
