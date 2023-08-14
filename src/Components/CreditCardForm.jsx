@@ -103,7 +103,7 @@ const CreditCardForm = () => {
             )}
             {(isCardNumberEmpty ||
               (cardType !== "Mastercard" && cardType !== "Visa")) && (
-              <div style={{ color: "#5E5C7F" }}>Unknown</div>
+              <div style={{ color: "#5E5C7F", marginRight: "10px" }}>Card Type</div>
             )}
           </div>
           <input

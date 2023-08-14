@@ -16,7 +16,7 @@ const Card = ({ cardNumber, cardName, expiration, ccv, cardType, isEmpty }) => {
           <img className="card-logo" src={vLogo} alt="Visa Logo" />
         )}
         {(isEmpty || (cardType !== "Mastercard" && cardType !== "Visa")) && (
-          <div className="unknown-type">Unknown</div>
+          <div style={{margin: "10px"}}>Card Type</div>
         )}
       </div>
       <div className="card-number">{cardNumber || "•••• •••• •••• •••"}</div>
