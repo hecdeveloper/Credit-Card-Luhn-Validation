@@ -43,7 +43,7 @@ const CreditCardForm = () => {
     const cleaned = value.replace(/\D+/g, ""); // Removing all non-digits
 
     // Ensuring only the first 3 characters are considered
-    const formatted = cleaned.slice(0, 3);
+    const formatted = cleaned.slice(0, 4);
 
     setCcv(formatted);
   };
