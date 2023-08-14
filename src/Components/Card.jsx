@@ -3,6 +3,7 @@ import "./card.css";
 import cardChip from "./Images/chip.png";
 import mLogo from "./Images/mastercard.png";
 import vLogo from "./Images/visa.png";
+import amexLogo from "./Images/amex.png";
 
 const Card = ({ cardNumber, cardName, expiration, ccv, cardType, isEmpty }) => {
   return (
@@ -15,8 +16,15 @@ const Card = ({ cardNumber, cardName, expiration, ccv, cardType, isEmpty }) => {
         {cardType === "Visa" && !isEmpty && (
           <img className="card-logo" src={vLogo} alt="Visa Logo" />
         )}
-        {(isEmpty || (cardType !== "Mastercard" && cardType !== "Visa")) && (
-          <div style={{margin: "10px"}}>Card Type</div>
+        {cardType === "American Express" && !isEmpty && (
+          <img
+            className="amex-logo"
+            src={amexLogo}
+            alt="American Express Logo"
+          />
+        )}
+        {(isEmpty || (cardType !== "Mastercard" && cardType !== "Visa" && cardType !=="American Express")) && (
+          <div style={{ margin: "10px" }}>Card Type</div>
         )}
       </div>
       <div className="card-number">{cardNumber || "•••• •••• •••• •••"}</div>

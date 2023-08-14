@@ -4,6 +4,7 @@ import Card from "./Card";
 import cardChip from "./Images/chip.png";
 import mLogo from "./Images/mastercard.png";
 import vLogo from "./Images/visa.png";
+import amexLogo from "./Images/amex.png";
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -101,9 +102,19 @@ const CreditCardForm = () => {
             {!isCardNumberEmpty && cardType === "Visa" && (
               <img className="card-logo" src={vLogo} alt="Visa Logo" />
             )}
+
+            {!isCardNumberEmpty && cardType === "American Express" && (
+              <img
+                className="amex-logo"
+                src={amexLogo}
+                alt="American Express Logo"
+              />
+            )}
             {(isCardNumberEmpty ||
-              (cardType !== "Mastercard" && cardType !== "Visa")) && (
-              <div style={{ color: "#5E5C7F", marginRight: "10px" }}>Card Type</div>
+              (cardType !== "Mastercard" && cardType !== "Visa" && cardType !== "American Express" )) && (
+              <div style={{ color: "#5E5C7F", marginRight: "10px" }}>
+                Card Type
+              </div>
             )}
           </div>
           <input
