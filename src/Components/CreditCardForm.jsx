@@ -135,7 +135,7 @@ const CreditCardForm = () => {
             <input
               type="tel"
               value={ccv}
-              maxLength="3" // Max 3 characters for CVV
+              maxLength="4" // Max 3 characters for CVV
               onChange={handleCcvChange}
               placeholder="CCV"
               className="card-input half-width"
