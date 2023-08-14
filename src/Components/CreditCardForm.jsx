@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 import cardChip from "./Images/chip.png";
-import mLogo from './Images/mastercard.png';
-import vLogo from './Images/visa.png';
-
+import mLogo from "./Images/mastercard.png";
+import vLogo from "./Images/visa.png";
 
 const CreditCardForm = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -47,6 +46,7 @@ const CreditCardForm = () => {
 
     setCcv(formatted);
   };
+  const isCardNumberEmpty = !cardNumber || cardNumber.trim() === "";
 
   const handleCardInputChange = (e) => {
     e.target.value = formatCardNumber(e.target.value);
@@ -91,19 +91,20 @@ const CreditCardForm = () => {
         cardType={cardType}
         isEmpty={!cardNumber || cardNumber.trim() === ""}
       />
-      {cardType !== "Unknown" && (
-        <div className="card-type">
-          <span>Card Type: {cardType}</span>
-        </div>
-      )}
-
       <div className="container">
         <div className={`cardform ${isValid ? "is-valid" : ""}`}>
           <div className="card-line">
             <img className="card-chip" src={cardChip} alt="Card Logo" />
-            {cardType === "Mastercard" && <img className="card-logo" src={mLogo} alt="Mastercard Logo" />}
-        {cardType === "Visa" && <img className="card-logo" src={vLogo} alt="Visa Logo" />}
-        {cardType !== "Mastercard" && cardType !== "Visa" && <div style={{color: "#5E5C7F"}} >Card Type</div>}
+            {!isCardNumberEmpty && cardType === "Mastercard" && (
+              <img className="card-logo" src={mLogo} alt="Mastercard Logo" />
+            )}
+            {!isCardNumberEmpty && cardType === "Visa" && (
+              <img className="card-logo" src={vLogo} alt="Visa Logo" />
+            )}
+            {(isCardNumberEmpty ||
+              (cardType !== "Mastercard" && cardType !== "Visa")) && (
+              <div style={{ color: "#5E5C7F", marginRight: "10px" }}>Card Type</div>
+            )}
           </div>
           <input
             type="text"
