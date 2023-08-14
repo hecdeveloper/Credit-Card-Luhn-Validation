@@ -10,9 +10,9 @@ const Card = ({ cardNumber, cardName, expiration,ccv, cardType }) => {
       <div className="images-row">
 
     <img className="card-chip" src={cardChip} alt="Card Logo" />
-    <img className="card-logo" src={mLogo} alt="mastercard Logo" />
-    {/* <img className="card-logo" src={vLogo} alt="mastercard Logo" /> */}
-    {/* <div className="card-type">{cardType || "Unknown"}</div> */}
+    {cardType === "Mastercard" && <img className="card-logo" src={mLogo} alt="Mastercard Logo" />}
+        {cardType === "Visa" && <img className="card-logo" src={vLogo} alt="Visa Logo" />}
+        {cardType !== "Mastercard" && cardType !== "Visa" && <div className="unknown-type">Card Type</div>}
       </div>
       <div className="card-number">{cardNumber || "•••• •••• •••• •••"}</div>
       <div className="card-row">
