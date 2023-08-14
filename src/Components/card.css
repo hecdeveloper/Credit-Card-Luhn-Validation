@@ -1,7 +1,7 @@
 .credit-card {
     display: none; 
     max-width: 400px;
-    height: 200px;
+    height: 217px;
     background: linear-gradient(to right, #6C6CE5, #5B5BCC); 
     border-radius: 15px;
     padding: 15px;
@@ -30,11 +30,24 @@
     width: 40px;
     margin: 10px;
 }
+.card-logo{
+    height: 50px;
+}
 
 .card-row{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.images-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-name{
+    margin-left: 20px;
 }
 
 
@@ -44,7 +57,7 @@
         display: flex;
     }
     .card-chip{
-        margin: 0;
+        margin-left: 20px;
     }
 
 }

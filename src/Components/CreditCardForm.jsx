@@ -85,6 +85,7 @@ const CreditCardForm = () => {
         cardName={cardName}
         expiration={expiration}
         ccv={ccv}
+        cardType={cardType}
       />
       {cardType !== "Unknown" && (
         <div className="card-type">
