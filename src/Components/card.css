@@ -34,9 +34,11 @@
 .card-logo{
     height: 50px;
 }
-.amex-logo{
-    height: 40px;
-}
+.amex-logo {
+    height: 30px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
 .card-row{
     display: flex;
     flex-direction: row;
